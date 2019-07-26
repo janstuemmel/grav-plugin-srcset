@@ -1,0 +1,71 @@
+name: Srcset
+version: 0.1.0
+description: test
+icon: plug
+author:
+  name: Jan Stümmel
+  email: info@janstuemmel.de
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+         
+    widths:
+      label: Widths
+      type: list
+      fields:
+
+        .image_width:
+          type: int
+          label: Image width
+          validate:
+            type: int
+        
+        .inherent_width:
+          type: int
+          label: Inherent width e.g. `480w`
+          validate:
+            type: int
+
+    section_fallback:
+      type: section
+      title: Fallback
+      underline: true
+
+    fallback:
+      type: toggle
+      label: Fallback
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    fallback_settings:
+      label: Fallback Settings
+      type: list
+      fields:
+
+        .key:
+          type: select
+          label: Filter
+          classes: fancy
+          data-options@: 'Grav\Plugin\SrcsetPlugin::getImageMagicActions'
+
+        .value:
+          type: text
+          label: Value
