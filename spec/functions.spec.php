@@ -17,9 +17,6 @@ describe('tests', function() {
   it('should set `srcset` and remove `src` attribute', function() {
 
     // given
-
-    allow('ImageMock')->toBe('ImageMock');
-
     $images = [ 'bar.jpeg' => new ImageMock('/foo/bar.jpeg') ];
     $Inline = [
       'element' => [

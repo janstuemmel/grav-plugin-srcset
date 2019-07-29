@@ -35,7 +35,7 @@ form:
         
         .inherent_width:
           type: int
-          label: Inherent width e.g. `480w`
+          label: Inherent width
           validate:
             type: int
 
